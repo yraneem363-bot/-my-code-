@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>main.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #b3ae60;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #bcbec4;}
+.s5 { color: #2aacb8;}
+.s6 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.cpp</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;iostream&gt;</span>
+<span class="s3">using namespace </span><span class="s1">std</span><span class="s4">;</span>
+<span class="s3">class </span><span class="s1">bankAccount </span><span class="s4">{</span>
+<span class="s3">private</span><span class="s1">:</span>
+    <span class="s3">int </span><span class="s1">acc_num</span><span class="s4">;</span>
+    <span class="s1">string acc_name</span><span class="s4">;</span>
+    <span class="s3">float </span><span class="s1">balance</span><span class="s4">;</span>
+<span class="s3">public</span><span class="s1">:</span>
+    <span class="s1">bankAccount</span><span class="s4">(</span><span class="s3">int </span><span class="s1">num</span><span class="s4">, </span><span class="s1">string name</span><span class="s4">, </span><span class="s3">float  </span><span class="s1">intalize_balance</span><span class="s4">= </span><span class="s5">0.0</span><span class="s4">);</span>
+    <span class="s3">int </span><span class="s1">get_acc_num</span><span class="s4">();</span>
+    <span class="s1">string get_acc_name</span><span class="s4">();</span>
+    <span class="s3">float </span><span class="s1">get_balance</span><span class="s4">();</span>
+
+    <span class="s3">void </span><span class="s1">deposit_money</span><span class="s4">(</span><span class="s3">float </span><span class="s1">amount</span><span class="s4">);</span>
+    <span class="s3">void </span><span class="s1">withdraw_money</span><span class="s4">(</span><span class="s3">float </span><span class="s1">amount</span><span class="s4">);</span>
+
+<span class="s4">};</span>
+
+
+<span class="s1">bankAccount::bankAccount</span><span class="s4">(</span><span class="s3">int </span><span class="s1">num</span><span class="s4">, </span><span class="s1">string name</span><span class="s4">, </span><span class="s3">float </span><span class="s1">intalize_balance </span><span class="s4">)</span>
+<span class="s4">{</span>
+    <span class="s1">acc_num </span><span class="s4">= </span><span class="s1">num</span><span class="s4">;</span>
+    <span class="s1">acc_name </span><span class="s4">= </span><span class="s1">name</span><span class="s4">;</span>
+    <span class="s1">balance </span><span class="s4">= </span><span class="s1">intalize_balance</span><span class="s4">;</span>
+<span class="s4">}</span>
+
+<span class="s3">int </span><span class="s1">bankAccount::get_acc_num</span><span class="s4">()</span>
+<span class="s4">{</span>
+    <span class="s3">return </span><span class="s1">acc_num</span><span class="s4">;</span>
+<span class="s4">}</span>
+<span class="s1">string bankAccount::get_acc_name</span><span class="s4">()</span>
+<span class="s4">{</span>
+    <span class="s3">return </span><span class="s1">acc_name</span><span class="s4">;</span>
+<span class="s4">}</span>
+<span class="s3">float </span><span class="s1">bankAccount::get_balance</span><span class="s4">()</span>
+<span class="s4">{</span>
+    <span class="s3">return </span><span class="s1">balance</span><span class="s4">;</span>
+<span class="s4">}</span>
+<span class="s3">void </span><span class="s1">bankAccount::deposit_money</span><span class="s4">(</span><span class="s3">float </span><span class="s1">amount</span><span class="s4">) {</span>
+    <span class="s3">if </span><span class="s4">(</span><span class="s1">amount </span><span class="s4">&gt; </span><span class="s5">0</span><span class="s4">) {</span>
+        <span class="s1">balance </span><span class="s4">+= </span><span class="s1">amount</span><span class="s4">;</span>
+        <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Succesfully depost process&quot; </span><span class="s4">&lt;&lt; </span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s4">}</span>
+    <span class="s3">else </span><span class="s4">{</span>
+        <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Cannot deposit negative amount &quot; </span><span class="s4">&lt;&lt; </span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s4">}</span>
+<span class="s4">}</span>
+<span class="s3">void </span><span class="s1">bankAccount::withdraw_money</span><span class="s4">(</span><span class="s3">float </span><span class="s1">amount</span><span class="s4">)</span>
+<span class="s4">{</span>
+    <span class="s3">if </span><span class="s4">(</span><span class="s1">amount </span><span class="s4">&lt;= </span><span class="s5">0</span><span class="s4">) {</span>
+        <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;The amount of money must be greater tan zero&quot; </span><span class="s4">&lt;&lt; </span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s4">}</span>
+    <span class="s3">else if </span><span class="s4">(</span><span class="s1">amount </span><span class="s4">&gt; </span><span class="s1">balance</span><span class="s4">) {</span>
+        <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Insufficent money in the account&quot; </span><span class="s4">&lt;&lt; </span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s4">}</span>
+    <span class="s3">else </span><span class="s4">{</span>
+        <span class="s1">balance </span><span class="s4">-= </span><span class="s1">amount</span><span class="s4">;</span>
+        <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Succesed withdraw process!&quot; </span><span class="s4">&lt;&lt; </span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s4">}</span>
+<span class="s4">}</span>
+
+
+<span class="s3">int </span><span class="s1">main</span><span class="s4">() {</span>
+    <span class="s1">bankAccount client1</span><span class="s4">( </span><span class="s5">221 </span><span class="s4">, </span><span class="s2">&quot;ahmed omar&quot; </span><span class="s4">, </span><span class="s5">6000</span><span class="s4">);</span>
+    <span class="s1">bankAccount client2</span><span class="s4">(</span><span class="s5">222</span><span class="s4">, </span><span class="s2">&quot;adel yasser&quot;</span><span class="s4">, </span><span class="s5">4000</span><span class="s4">);</span>
+
+    <span class="s1">client1</span><span class="s4">.</span><span class="s1">deposit_money</span><span class="s4">(</span><span class="s5">400</span><span class="s4">); </span><span class="s6">// add money</span>
+    <span class="s1">client2</span><span class="s4">.</span><span class="s1">deposit_money</span><span class="s4">(-</span><span class="s5">20.5</span><span class="s4">); </span><span class="s6">// error ----&gt; will give hime sign &quot;cannot deposit negative amount &quot;</span>
+    <span class="s1">client1</span><span class="s4">.</span><span class="s1">withdraw_money</span><span class="s4">(</span><span class="s5">300</span><span class="s4">);</span><span class="s6">// withdraw money</span>
+    <span class="s1">client2</span><span class="s4">.</span><span class="s1">withdraw_money</span><span class="s4">(</span><span class="s5">7000</span><span class="s4">);</span><span class="s6">// error ----&gt; will give hime sign &quot; insufficent money in the account&quot;</span>
+
+    <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;----------------INFORMATIONS------------&quot;</span><span class="s4">&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Client 1 Name: &quot; </span><span class="s4">&lt;&lt;</span><span class="s1">client1</span><span class="s4">.</span><span class="s1">get_acc_name</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout </span><span class="s4">&lt;&lt;</span><span class="s2">&quot;Client 1 Acc Number: &quot; </span><span class="s4">&lt;&lt; </span><span class="s1">client1</span><span class="s4">.</span><span class="s1">get_acc_num</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Client 1 balance : &quot; </span><span class="s4">&lt;&lt;</span><span class="s1">client1</span><span class="s4">.</span><span class="s1">get_balance</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Client 2 Name: &quot; </span><span class="s4">&lt;&lt; </span><span class="s1">client2</span><span class="s4">.</span><span class="s1">get_acc_name</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout</span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Client 2 Acc Number: &quot; </span><span class="s4">&lt;&lt; </span><span class="s1">client2</span><span class="s4">.</span><span class="s1">get_acc_num</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+    <span class="s1">cout </span><span class="s4">&lt;&lt; </span><span class="s2">&quot;Client 2 Balance: &quot; </span><span class="s4">&lt;&lt; </span><span class="s1">client2</span><span class="s4">.</span><span class="s1">get_balance</span><span class="s4">()&lt;&lt;</span><span class="s1">endl</span><span class="s4">;</span>
+<span class="s4">}</span>
+
+
+</pre>
+</body>
+</html>
